@@ -1,0 +1,10 @@
+#app
+    h1 {{win_text}}
+    .block_area
+        .block(v-for="(block,bid) in blocks",
+            :class="{circle: block.type==1, cross: block.type==-1}",
+            @click="player_go(block)")
+            .small_number {{bid+1}}
+    h2 Now Player
+    .block.small(:class="{circle: turn==1, cross: turn==-1}")
+    h2.restart(@click="restart()") Restart

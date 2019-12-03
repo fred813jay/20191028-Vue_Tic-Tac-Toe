@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>20191028-Vue井字遊戲</title>
+<link rel="stylesheet" href="./style.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div id="app">
+  <h1>{{win_text}}</h1>
+  <div class="block_area">
+    <div class="block" v-for="(block,bid) in blocks" :class="{circle: block.type==1, cross: block.type==-1}" @click="player_go(block)">
+      <div class="small_number">{{bid+1}}</div>
+    </div>
+  </div>
+  <h2>Now Player</h2>
+  <div class="block small" :class="{circle: turn==1, cross: turn==-1}"></div>
+  <h2 class="restart" @click="restart()">Restart</h2>
+</div>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>
